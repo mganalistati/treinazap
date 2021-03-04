@@ -4,8 +4,12 @@
 name: Deploy CloudfoxSuit-Chat to S3
 
 on:
-  release:
-    types: [commit]
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
