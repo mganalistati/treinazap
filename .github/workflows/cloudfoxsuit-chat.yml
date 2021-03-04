@@ -22,5 +22,8 @@ jobs:
            CI: "false"
       - name: LISTAR ARQUIVOS
         run: ls -la build/*
-        run: cd build && AWS_ACCESS_KEY_ID=AKIA2CFXAGTAIOHW2QEH AWS_SECRET_ACCESS_KEY=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 aws s3 sync . s3://cloudfoxsuit-chat --acl public-read --delete
+        run: cd build && AWS_ACCESS_KEY_ID=${CHAVE} AWS_SECRET_ACCESS_KEY=${SENHA} aws s3 sync . s3://cloudfoxsuit-chat --acl public-read --delete
+        env:
+           CHAVE: ${{ secrets.ACCESS_KEY }}
+           SENHA: ${{ secrets.SECRET_KEY }}
         
