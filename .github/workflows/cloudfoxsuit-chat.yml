@@ -20,8 +20,7 @@ jobs:
         run: npm install && npm run build
         env:
            CI: "false"
-      - name: LISTAR ARQUIVOS
-        run: ls -la build/*
+      - name: Deploy S3
         run: cd build && AWS_ACCESS_KEY_ID=${CHAVE} AWS_SECRET_ACCESS_KEY=${SENHA} aws s3 sync . s3://cloudfoxsuit-chat --acl public-read --delete
         env:
            CHAVE: ${{ secrets.ACCESS_KEY }}
