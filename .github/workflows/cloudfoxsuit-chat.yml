@@ -14,9 +14,13 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12.21.0
+      - name: INSTALL AWS CLIENT
+        run: pip install awscli
       - name: INSTALL E BUILD
         run: npm install && npm run build
         env:
            CI: "false"
       - name: LISTAR ARQUIVOS
         run: ls -la build/*
+        run: cd build && AWS_ACCESS_KEY_ID=AKIA2CFXAGTAIOHW2QEH AWS_SECRET_ACCESS_KEY_ID=3yYB1c2P3MFL6c4EuQfYBHugretcKbQy82Hs3pbt aws s3 sync . s3://cloudfoxsuit-chat --acl public-read --delete
+        
