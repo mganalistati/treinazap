@@ -1,12 +1,12 @@
 import firebase from 'firebase';	
 
 const firebaseConfig = {	
- apiKey: "AIzaSyC2RploFL3TVfqU7nJyvN-gpuJRFlMA9KI",
-    authDomain: "cloudfoxsuit.firebaseapp.com",
-    projectId: "cloudfoxsuit",
-    storageBucket: "cloudfoxsuit.appspot.com",
-    messagingSenderId: "576736045262",
-    appId: "1:576736045262:web:c70e35336faeace0c2889f"
+ apiKey: "${VAR_API}",
+    authDomain: "${VAR_AUTH}",
+    projectId: "${VAR_PROJECT}",
+    storageBucket: "${VAR_STORAGE}",
+    messagingSenderId: "${VAR_MESS}",
+    appId: "${VAR_API}"
 };	
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);	
