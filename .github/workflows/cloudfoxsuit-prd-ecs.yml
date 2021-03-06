@@ -58,5 +58,5 @@ jobs:
           docker push $ECR_REPOSITORY:latest
           aws ecs update-service --cluster cloudfox --service cloudfoxsuit-chat --force-new-deployment --region us-east-1
      
-      - name: CLEAR CACHE
-        run: AWS_ACCESS_KEY_ID=${ACCESS_KEY} AWS_SECRET_ACCESS_KEY=${SECRET_KEY} aws cloudfront create-invalidation --distribution-id ENZH2TNS2F558 --path '/*' 
+      #- name: CLEAR CACHE
+      #  run: AWS_ACCESS_KEY_ID=${ACCESS_KEY} AWS_SECRET_ACCESS_KEY=${SECRET_KEY} aws cloudfront create-invalidation --distribution-id ENZH2TNS2F558 --path '/*' 
