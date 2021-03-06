@@ -53,7 +53,7 @@ jobs:
           ECR_REPOSITORY: 691873526976.dkr.ecr.us-east-1.amazonaws.com/cloudfoxsuitchat-chat
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build -t treinazap .
+          docker build -t cloudfoxsuit-chat .
           docker tag treinazap:latest $ECR_REPOSITORY:latest
           docker push $ECR_REPOSITORY:latest
           aws ecs update-service --cluster unicorniostech --service cloudfoxsuit-chat --force-new-deployment --region us-east-1
